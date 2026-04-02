@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tong Su | Academic Homepage</title>
+    <meta
+      name="description"
+      content="Bilingual academic homepage for Tong Su, featuring research, publications, funding, services, teaching, and contact information."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#about">Tong Su</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation"></nav>
+        <button class="lang-switch" type="button" aria-label="Switch language">
+          <span class="lang-switch__option is-active" data-lang-option="en">EN</span>
+          <span class="lang-switch__divider">/</span>
+          <span class="lang-switch__option" data-lang-option="zh">中文</span>
+        </button>
+      </header>
+
+      <main id="app"></main>
+    </div>
+
+    <template id="section-template">
+      <section class="section">
+        <div class="section__header">
+          <p class="section__eyebrow"></p>
+          <h2 class="section__title"></h2>
+        </div>
+        <div class="section__body"></div>
+      </section>
+    </template>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
