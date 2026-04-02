@@ -1,51 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tong Su | Academic Homepage</title>
-    <meta
-      name="description"
-      content="Bilingual academic homepage for Tong Su, featuring research, publications, funding, services, teaching, and contact information."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="#about">Tong Su</a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation"></nav>
-        <button class="lang-switch" type="button" aria-label="Switch language">
-          <span class="lang-switch__option is-active" data-lang-option="en">EN</span>
-          <span class="lang-switch__divider">/</span>
-          <span class="lang-switch__option" data-lang-option="zh">中文</span>
-        </button>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tong Su academic homepage featuring research, publications, funding, and academic services.">
+  <title>Tong Su | Academic Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#about">
+        <span id="brand-name">Tong Su</span>
+      </a>
 
-      <main id="app"></main>
-    </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
 
-    <template id="section-template">
-      <section class="section">
-        <div class="section__header">
-          <p class="section__eyebrow"></p>
-          <h2 class="section__title"></h2>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#about" data-nav="about"></a>
+        <a href="#publications" data-nav="publications"></a>
+        <a href="#funding" data-nav="funding"></a>
+        <a href="#services" data-nav="services"></a>
+        <a href="#teaching" data-nav="teaching"></a>
+        <a href="#contact" data-nav="contact"></a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-btn="en" class="is-active">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
         </div>
-        <div class="section__body"></div>
-      </section>
-    </template>
+      </div>
+    </header>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <main>
+      <section id="about" class="hero">
+        <div class="portrait-column">
+          <div class="portrait-frame">
+            <img id="hero-photo" class="hero-photo" alt="Portrait of Tong Su">
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="hero-name"></h1>
+          <p class="hero-role" id="hero-role"></p>
+          <p class="hero-affiliation" id="hero-affiliation"></p>
+          <p class="hero-bio" id="hero-bio"></p>
+
+          <div class="hero-actions">
+            <a class="button" id="cv-link" href="assets/cv/tong-su-cv.pdf" download></a>
+          </div>
+
+          <div class="about-research">
+            <h2 id="research-title"></h2>
+            <ul id="research-list"></ul>
+            <p class="research-note" id="research-note"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="content-section">
+        <div class="section-heading">
+          <h2 id="publications-title"></h2>
+          <p id="publications-intro" hidden></p>
+        </div>
+        <div class="publication-list" id="publication-list"></div>
+      </section>
+
+      <section id="funding" class="content-section">
+        <div class="section-heading">
+          <h2 id="funding-title"></h2>
+          <p id="funding-intro" hidden></p>
+        </div>
+        <div class="funding-list" id="funding-list"></div>
+      </section>
+
+      <section id="services" class="content-section">
+        <div class="section-heading">
+          <h2 id="services-title"></h2>
+          <p id="services-intro" hidden></p>
+        </div>
+        <div class="service-layout">
+          <div class="service-panel">
+            <h3 id="reviewer-title"></h3>
+            <ul class="plain-list reviewer-grid" id="reviewer-list"></ul>
+          </div>
+          <div class="service-panel">
+            <h3 id="roles-title"></h3>
+            <p class="service-note service-note-inline" id="roles-note"></p>
+            <ul class="plain-list" id="roles-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="teaching" class="content-section">
+        <div class="section-heading">
+          <h2 id="teaching-title"></h2>
+          <p id="teaching-intro" hidden></p>
+        </div>
+        <div class="teaching-card">
+          <ul class="plain-list" id="teaching-list"></ul>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section">
+        <div class="section-heading">
+          <h2 id="contact-title"></h2>
+          <p id="contact-intro" hidden></p>
+        </div>
+        <div class="contact-inline" id="contact-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
